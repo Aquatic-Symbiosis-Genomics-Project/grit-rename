@@ -6,10 +6,10 @@
 class Mapper
   def initialize(file : String, outdir : String)
     @mapping = Hash(String, String).new
+    @map_file = file
     @outdir = outdir
-    self.parse_mapping(file)
-    Dir.mkdir_p(outdir)
-  end
+   end
+
 
   # parse the mapping
   # mapping between scaffold_ids -> new_ids
@@ -35,6 +35,7 @@ class Mapper
 
   # # fasta
   def fasta(file)
+    Dir.mkdir_p(@outdir)
     o_file = File.new("#{@outdir}/#{File.basename(file)}.fa", "w")
 
     File.each_line(file) do |line|
@@ -47,6 +48,7 @@ class Mapper
 
   # # tpf
   def tpf(file)
+    Dir.mkdir_p(@outdir)
     o_file = File.new("#{@outdir}/#{File.basename(file)}.tpf", "w")
     File.each_line(file) do |line|
       c = line.split("\t")
@@ -91,7 +93,7 @@ OptionParser.parse do |parser|
   end
 end
 
-mapper = Mapper.new(mapping_file, out_dir)
+mapper = Mapper.new(mapping_file,out_dir)
 mapper.fasta(fasta_file) if fasta_file
 # m.munge_ids(ARGV[1])    #munging ?
 mapper.tpf(tpf_file) if tpf_file

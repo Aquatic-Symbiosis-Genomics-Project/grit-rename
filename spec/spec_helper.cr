@@ -1,2 +1,2 @@
 require "spec"
-require "../src/grit-rename"
+# require "../src/grit-rename"

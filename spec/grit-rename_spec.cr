@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Grit::Rename do
+describe "dummy" do
   # TODO: Write tests
 
   it "works" do

@@ -8,8 +8,7 @@ class Mapper
     @mapping = Hash(String, String).new
     @map_file = file
     @outdir = outdir
-   end
-
+  end
 
   # parse the mapping
   # mapping between scaffold_ids -> new_ids
@@ -93,7 +92,7 @@ OptionParser.parse do |parser|
   end
 end
 
-mapper = Mapper.new(mapping_file,out_dir)
+mapper = Mapper.new(mapping_file, out_dir)
 mapper.fasta(fasta_file) if fasta_file
 # m.munge_ids(ARGV[1])    #munging ?
 mapper.tpf(tpf_file) if tpf_file

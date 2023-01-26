@@ -12,8 +12,8 @@ class Mapper
 
   # parse the mapping
   # mapping between scaffold_ids -> new_ids
-  def parse_mapping(file)
-    File.each_line(file) do |line|
+  def parse_mapping
+    File.each_line(@map_file) do |line|
       key, val = line.split(/\s+/)
       @mapping[key] = val
     end
@@ -93,6 +93,7 @@ OptionParser.parse do |parser|
 end
 
 mapper = Mapper.new(mapping_file, out_dir)
+mapper.parse_mapping
 mapper.fasta(fasta_file) if fasta_file
 # m.munge_ids(ARGV[1])    #munging ?
 mapper.tpf(tpf_file) if tpf_file

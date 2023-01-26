@@ -8,11 +8,12 @@ Tool to rename TPF/AGP/FASTA files based on a mapping
 ## Usage
 
 Usage: grit-rename --map MAPPINGs --fasta FASTAFILE --outdir OUTDIR --tpf TPFFILE
-    -m MAPPINGs, --map=MAPPINGS      mappings TSV file FROM<tab>TO
-    -f FASTAFILE, --fasta=FASTAFILE  FASTA FILE to rename
-    -t TPFFILE, --tpf=TPFFILE        TPF FILE to RENAME
-    -o OUTDIR, --outdir=OUTDIR       directory for the renamed files
-    -h, --help                       Show this help
+
+* -m MAPPINGs, --map=MAPPINGS      mappings TSV file FROM<tab>TO
+* -f FASTAFILE, --fasta=FASTAFILE  FASTA FILE to rename
+* -t TPFFILE, --tpf=TPFFILE        TPF FILE to RENAME
+* -o OUTDIR, --outdir=OUTDIR       directory for the renamed files
+* -h, --help                       Show this help
 
 ## Contributing
 
